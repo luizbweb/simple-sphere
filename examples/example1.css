@@ -14,7 +14,7 @@ header {
 	padding: 30px 20px;
 	background: linear-gradient(to left, #F0F0F0, #FFFFFF 50%);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-	text-align: right;
+	text-align: left;
 }
 
 header h1 {

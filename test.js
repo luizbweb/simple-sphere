@@ -15,7 +15,7 @@ function upload() {
 			// Panorama, given in base 64
 			// panorama: reader.result,
 			// panorama: 'http://refstecnologiaservices.com.br/homolog/etic-360/escritorio.jpg',
-			panorama: 'http://refstecnologiaservices.com.br/homolog/etic-360/examples/quadra2.jpg',
+			panorama: 'examples/sun.jpg',
 			// panorama: 'examples/escritorio.jpg',
 
 			// Container

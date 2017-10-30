@@ -9,18 +9,39 @@
 	</head>
 
 	<body>
+		<script scr="http://localhost/regifoto/js/jquery-3.2.1.js"></script>
+    	<script scr="http://localhost/regifoto/js/jquery.form.js"></script>
 		<header>
 			<h1>Simple Sphere 360 Degree Photo Viewer</h1>
 		</header>
 
 		<div id="content">
 
+			<p align="center">
+	            <h2>Upload your 360 degree photo</h2>
+	            <form id="form" enctype="multipart/form-data" method="post" action="manda.php" name="form_foto">
+	                <input id="arquivos" type="file" name="arquivo" value="" />
+	                <input id="submit" type="submit" value="Enviar Foto">
+	            </form>
+	        </p>
 			<p>Click and drag your mouse over a photo to see all the angles ...</p>
 
 			<div id="your-pano"></div>
 
 			<p style="text-align: right;"><a href="http://www.waw.net.br">Powered by WAW</a></p>
 		</div>
+
+        <script>
+	        var content;
+	        content = $('#arquivos').value;
+	        $('#arquivos').on( 'change', function() {
+	            alert('Com arquivo !');
+	            if (content !== "") {
+	                $('form').append( '<input type="text">' );
+	            }
+	        });
+        
+    	</script>
 
 		<!-- External library -->
 		<script src="./three.min.js"></script>
