@@ -8,10 +8,10 @@
 // verifica se foi enviado um arquivo
 if ( isset( $_FILES[ 'arquivo' ][ 'name' ] ) && $_FILES[ 'arquivo' ][ 'error' ] == 0 ) {
     // Information for debbug
-    echo 'Você enviou o arquivo: <strong>' . $_FILES[ 'arquivo' ][ 'name' ] . '</strong><br />';
+    /*echo 'Você enviou o arquivo: <strong>' . $_FILES[ 'arquivo' ][ 'name' ] . '</strong><br />';
     echo 'Este arquivo é do tipo: <strong > ' . $_FILES[ 'arquivo' ][ 'type' ] . ' </strong ><br />';
     echo 'Temporáriamente foi salvo em: <strong>' . $_FILES[ 'arquivo' ][ 'tmp_name' ] . '</strong><br />';
-    echo 'Seu tamanho é: <strong>' . $_FILES[ 'arquivo' ][ 'size' ] . '</strong> Bytes<br /><br />';
+    echo 'Seu tamanho é: <strong>' . $_FILES[ 'arquivo' ][ 'size' ] . '</strong> Bytes<br /><br />';*/
  
     $arquivo_tmp = $_FILES[ 'arquivo' ][ 'tmp_name' ];
     $nome = $_FILES[ 'arquivo' ][ 'name' ];
@@ -39,7 +39,7 @@ if ( isset( $_FILES[ 'arquivo' ][ 'name' ] ) && $_FILES[ 'arquivo' ][ 'error' ] 
         $directory = 'files/'. $date;
         $destino = 'files/'. $date .'/'. $novoNome;
 
-        echo $directory;
+        // echo $directory;
 
         // Make the diretory for photos
 
@@ -48,22 +48,22 @@ if ( isset( $_FILES[ 'arquivo' ][ 'name' ] ) && $_FILES[ 'arquivo' ][ 'error' ] 
  
         // tenta mover o arquivo para o destino
         if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
-            echo 'Arquivo salvo com sucesso em : <strong>' . $destino . '</strong><br />';
-            echo ' < img src = "' . $destino . '" />';
+            echo 'Success! <br />';
+            // echo ' < img src = "' . $destino . '" />';
         }
         else
-            echo 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />';
+            echo 'Error... :/ <br />';
     }
     else
-        echo 'Você poderá enviar apenas arquivos "*.jpg;*.jpeg;"<br />';
+        echo 'Use only files "*.jpg;*.jpeg;"<br />';
 }
 else
-    echo 'Você não enviou nenhum arquivo!';
+    echo 'You no send any file!';
 
 ?>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="refresh" content="2;/simple-sphere/?i=<?php echo $destino; ?>">
+        <meta http-equiv="refresh" content="0;/simple-sphere/?i=<?php echo $destino; ?>">
         <title>Envia Fotos</title>
     </head>
     <body>
