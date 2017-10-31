@@ -23,7 +23,6 @@ function upload() {
 	// var reader = new FileReader();
 	// Obtaining the value from GET
 	var image = getUrlVars();
-	console.log(image['i']);
 
 	// reader.onload = function() {
 		PSV = new PhotoSphereViewer({

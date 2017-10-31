@@ -1,3 +1,10 @@
+<?php
+	if($_GET) {
+		$destino = $_GET['i'];
+	} else {
+		$destino = '';
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,13 +28,21 @@
 	                <input id="submit" type="submit" value="Enviar Foto">
 	            </form>
 	        </p>
+	        <?php 
+	        	if ($destino != ''):
+	        ?>
 			<p>Click and drag your mouse over a photo to see all the angles ...</p>
 
 			<div id="your-pano"></div>
-			<div class="embeded">
-				
-			</div>
 
+			<div class="embeded">
+				<textarea class="embed-field" cols="20" rows="10"><iframe name="SS360" class="ss360-viewer" scrolling="no" width="800px" height="500px" allowfullscreen="true"  frameborder="0"  src="<?php echo $destino ?>"></iframe> </textarea>
+				<h3>Copy and paste this code in your site</h3>
+
+			</div>
+			<?php
+				endif;
+			?>
 			<p style="text-align: right;"><a href="http://www.waw.net.br">Powered by WAW</a></p>
 		</div>
 
@@ -61,7 +76,7 @@
 		<!-- Test script -->
 		<script src="./test.js"></script>
 		<script type="text/javascript">
-			(function($){
+			/*(function($){
 				// Function from test.js
 		        var img = getUrlVars();
 		        var embed = '<input class="embed-field" type="text" name="share-code" value="';
@@ -71,7 +86,7 @@
 
 		        $('.embeded').append(embed);
 
-			}).jQuery
+			}).jQuery*/
 
 		</script>
 	</body>
